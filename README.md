@@ -69,17 +69,26 @@ pip install -r requirements.txt
 ---
 
 ## 🏗 MLP Mixture Model Architecture
-The **MLP mixture model** is designed for efficient feature extraction and classification of OCT images. The architecture includes:
-- **Multiple Fully Connected Layers** with non-linear activations.
-- **Dropout and Batch Normalization** to prevent overfitting.
-- **Weighted Loss Functions** to handle class imbalance.
-- **Optimization with Adam** and **learning rate scheduling**.
-
-**Why an MLP Mixture Model?**
-- MLP mixture models **combine multiple subnetworks** to handle variations in retinal OCT images.
-- **Improved generalization** with carefully tuned hyperparameters.
-- **Lower computational cost** compared to complex CNN architectures.
-
+THere's a rewritten version of the text in a format suitable for a Git README file:
+MLP-Mixer Architecture for OCT Image Classification
+Overview
+This repository implements an MLP-Mixer architecture designed for efficient feature extraction and classification of OCT images. The model combines the benefits of multi-layer perceptrons (MLPs) with a mixture of experts approach to handle variations in retinal OCT images.
+Architecture
+The MLP-Mixer architecture is based entirely on MLPs, eliminating the need for convolutions or self-attention. The model relies on basic matrix multiplication routines, data layout changes, and scalar nonlinearities.
+Input: Sequence of linearly projected image patches (tokens) shaped as a "patches × channels" table
+MLP Layers: Two types of MLP layers are used:
+Channel-mixing MLPs: Allow communication between different channels, operating on each token independently
+Token-mixing MLPs: Allow communication between different spatial locations (tokens), operating on each channel independently
+Interleaving: Channel-mixing and token-mixing layers are interleaved to enable interaction between input dimensions
+Key Features
+Multiple Fully Connected Layers: With non-linear activations for efficient feature extraction
+Dropout and Batch Normalization: To prevent overfitting and improve generalization
+Weighted Loss Functions: To handle class imbalance in OCT image classification
+Optimization: With Adam optimizer and learning rate scheduling for efficient training
+Benefits
+Improved Generalization: Through careful tuning of hyperparameters
+Lower Computational Cost: Compared to complex CNN architectures
+Efficient Feature Extraction: Through the use of MLPs and mixture of experts approach
 ---
 
 ## 📬 Contact
